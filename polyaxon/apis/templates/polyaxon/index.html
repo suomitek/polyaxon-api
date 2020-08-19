@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% load static %}
+    <title>Polyaxon</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}?version={{ version }}"/>
+    <base href="/">
+</head>
+
+<body class="plxBody">
+<div id="root"></div>
+
+<!-- Dependencies -->
+    {% if ui_enabled %}
+    {% if ui_offline %}
+    <script src="{% static 'vendors/js/react.production.16.13.1.min.js' %}?version={{ version }}"></script>
+    <script src="{% static 'vendors/js/react-dom.production.16.13.1.min.js' %}?version={{ version }}"></script>
+    <script src="{% static 'vendors/js/lodash.4.17.15.min.js' %}?version={{ version }}"></script>
+    <script src="{% static 'vendors/js/moment.2.26.0.min.js' %}?version={{ version }}"></script>
+    <script src="{% static 'vendors/js/plotly.1.44.0.min.js' %}?version={{ version }}"></script>
+    <script src="{% static 'vendors/js/create-plotly-component.2.4.0.min.js' %}?version={{ version }}"></script>
+    <script src="{% static 'vendors/js/bokeh.2.0.2.min.js' %}?version={{ version }}"></script>
+    <script src="{% static 'vendors/js/vega@5.min.js' %}?version={{ version }}"></script>
+    <script src="{% static 'vendors/js/vega-lite@4.min.js' %}?version={{ version }}"></script>
+    <script src="{% static 'vendors/js/vega-embed@6.min.js' %}?version={{ version }}"></script>
+    {% else %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.13.1/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.1/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-1.44.0.min.js"></script>
+    <script src="https://unpkg.com/react-plotly.js@2.4.0/dist/create-plotly-component.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bokeh/2.0.2/bokeh.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+    {%  endif %}
+    <script src="{% static 'dist/js/bundle.js' %}?version={{ version }}"></script>
+    <script src="{% static 'dist/js/0.bundle.js' %}?version={{ version }}"></script>
+    <script src="{% static 'dist/js/1.bundle.js' %}?version={{ version }}"></script>
+    {%  endif %}
+</body>
+</html>
